@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+.logo {
+    font-size: 36px;
+}
+
+.font-bol {
+    font-weight: bold;
+}
+
+.black {
+    color: black;
+}
+
+.white {
+    color: white;
+}
+
+.fot {
+    font-size: 10px;
+    padding: 50px;
+}
+
+.navWid {
+	padding-left:50px;
+  	padding-right:50px;
+}
+
+.hyper-text {
+	text-decoration: none;
+	text-decoration-line:none;
+	color: black;
+}
+
+.font-no{
+	font-size: 16px;
+}
+
+.thead-main{
+	color: #707070;	
+}
+
+.formall-width{
+	width: 340px;
+}
+
+.login-join{
+	width: 340px;
+	height: auto;	
+}
+
+input[type=radio], input[type=chechbox] {
+	accent-color: red;
+}
+
+table {
+	border-spacing: 1px;
+}
+
+.plan-enroll {
+	width:415px;
+}
+
+
+
+.middle {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.slider {
+  position: relative;
+  height: 10px;
+  margin: 0 15px;
+  background-color: #FFCBC2;
+}
+.slider .progress {
+  position: absolute;
+  height:10px;
+  left:25%;
+  right:25%;
+  border-radius: 3px;
+  background-color: #DB6551;
+}
+
+.range-input{
+	position:relative;
+}
+
+.range-input input{
+	position:absolute;
+	top: -10px;
+	height: 10px;
+	width:100%;
+	-webkit-appearance: none;
+	background: none;
+	pointer-events:none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+	height:30px;
+	width:30px;
+	border-radius:50%;
+	pointer-events:auto;
+	-webkit-appearance: none;
+	background:#DB6551;
+}
+
+input[type="range"]::-moz-range-thumb{
+	height:20px;
+	width:20px;
+	border-radius:50%;
+	pointer-events:auto;
+	-moz-appearance: none;
+	background:#DB6551;
+}
+
+.day-input{
+  margin: 30px 0 35px;
+}
+
+.day-input .field{
+  display: flex;
+  align-items: center;
+}
+
+.field input {
+  margin-left:12px;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  font-size: 16px;
+}
+
+
+
+
+.btnColor {
+	width:50px;
+	height:50px;
+}
+
+.text-hover:hover {
+	text-decoration: underline;
+}
+
+
+.form-control:focus, .form-select:valid:focus{
+	box-shadow:none;
+	border-width:3px; 
+	border-color:gray; 
+}
+
+.nav-link:active{
+	font-weight: bold;
+	color: #ffffff; 
+	background-color:#DB6551;
+}
+
+.btn:focus{
+	outline:3px solid #DB6551;
+}
+div.box{
+	display: none;
+  }
