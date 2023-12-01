@@ -49,9 +49,10 @@ HabitDTO hdto = hdao.selectView(habitId);
     <!-- main content가 삽입될 위치 -->
   	<div id = "content" style="padding:30px; ">
   	
+  	<div class="mx-auto plan-enroll">
   	<form action="HabitDetailPro.jsp">
 		      			<input type="hidden" name="goalId" value="<%= gdto.getGoalId() %>" />
-								<div class="card card-body" style="width: 300px;">
+								<div class="card card-body plan-enroll" >
 							    	<p class="font-bol font-no">세부 계획을 추가해주세요</p>
 							    	
 							    	<div class="mb-2 row">
@@ -91,8 +92,8 @@ HabitDTO hdto = hdao.selectView(habitId);
 					        		</button>
 					        		<%-- <%=gdto.getGoalId()%> --%>
 					        		</div>
-						</form>
-						
+	</form>
+	</div>
 						<br/>
 		  	
 					

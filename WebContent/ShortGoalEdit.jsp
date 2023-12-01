@@ -235,14 +235,14 @@ MidDTO hdto = hdao.selectView(middleId);
 			        		<button type="button" class="btn btn-primary col-auto" 
 			        		onclick="location.href='ShortDetail.jsp?goalId=<%= gdto.getGoalId() %>'" 
 			        		 style="background-color:#ffffff; color: #DB6551; border-color: #DB6551;">
-			        		 	+중간 목표 추가(선택)
+			        		 	중간 목표 관리
 			        		</button>
 			        	
 			        	<%for (MidDTO hadto : habitLists){%>
 			  			<% if (gdto.getGoalId().equals(hadto.getGoalId())) {%>
-			  		<div class="card my-3">
-			  			<p><%= hadto.getMiddleId() %></p>
-			  			<p>중간목표: <%= hadto.getMiddleGoal() %></p>
+			  		<div class="card card-body my-3">
+			  			<%-- <p><%= hadto.getMiddleId() %></p> --%>
+			  			<p class="font-bol">중간목표: <%= hadto.getMiddleGoal() %></p>
 			  			<p>시작 수치: <%= hadto.getStartNum() %><%= hadto.getGoalUnit() %>,  
 			  			목표 수치: <%= hadto.getGoalNum() %><%= hadto.getGoalUnit() %></p>
 			  			<p>중간목표 달성일: <%= hadto.getMidDate() %></p>

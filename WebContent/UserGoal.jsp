@@ -1002,7 +1002,7 @@ MidDownDTO midto = midao.selectView(midDownId);  // 중간하위목표 목록 �
 	  	<!-- 게시물 목록 테이블(표처럼) --> 
 				<!-- 목록의 내용 --> 
 				<%
-				if (usergoalLists.isEmpty()) {
+				if (goalListsUserId.isEmpty()) {
 				    // 목표가 하나도 없을 때 
 				%>
 				            <div style="text-align:center;">
@@ -1039,21 +1039,21 @@ MidDownDTO midto = midao.selectView(midDownId);  // 중간하위목표 목록 �
 			  			<div class="badge rounded-pill text"
 			  			style="background-color:#A03A29; height:26px;"><p class="font-no">
 							<%
-							//지정 목표 실천률에 필요한 실천 일수 계산
+							/* //지정 목표 실천률에 필요한 실천 일수 계산
 							SimpleDateFormat tr = new SimpleDateFormat("yyyy-MM-dd");
 							Date now = new Date(System.currentTimeMillis());
 							Date t = tr.parse(gdto.getStartDate());
 							/* int implement = now - t ;  */ 
-							long diffSec = (now.getTime() - t.getTime()) / 1000; //초 차이
+							/* long diffSec = (now.getTime() - t.getTime()) / 1000; //초 차이
 					        long diffMin = (now.getTime() - t.getTime()) / 60000; //분 차이
 					        long diffHor = (now.getTime() - t.getTime()) / 3600000; //시 차이
-					        long diffDays = diffSec / (24*60*60); //일자수 차이
+					        long diffDays = diffSec / (24*60*60); //일자수 차이 */
 							
 							/* System.out.println(diffDays + "일 차이"); */
 							
 							// 목표별로 게시물 작성 수를 카운트하고, 실천해야 했을 일수를 카운트해서, 목표별 실천률에 반영
 							// -> 작성 수 / 실천해야했을 횟수 * 100 
-							String getGoalId = gdto.getGoalId();
+							/* String getGoalId = gdto.getGoalId();
 							for (BoardDTO bodto : boardLists){
 								if (gdto.getGoalId().equals(bodto.getGoalId())) {
 									int idCount = bdao.selectCount(param);
@@ -1068,36 +1068,42 @@ MidDownDTO midto = midao.selectView(midDownId);  // 중간하위목표 목록 �
 									System.out.println(diffDays);
 									System.out.println(percent);
 								}
-							} return percent;
+							} return percent; */ 
 							%>
-							<%= percent %>%
+							0%
 						</p></div>
 		  			</div>
 		  			<p class="card-text"><%= gdto.getRepeatCycle() %>,&nbsp;<%= gdto.getRepeatType() %></p>
 		  			<p class="card-text">목표 생성일: <fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="<%= gdto.getCreatedAt() %>"/></p>
-		  			<%= gdto.getGoalId()%>
+		  			<%-- <%= gdto.getGoalId()%> --%>
 		  			<%for (HabitDTO hadto : habitLists){%>
 			  			<% if (gdto.getGoalId().equals(hadto.getGoalId())) {%>
-			  			<p>할 일: <%= hadto.getTodo() %></p>
+			  			<div class="card card-body mx-2 my-2">
+			  			<p class="font-bol">할 일: <%= hadto.getTodo() %></p>
 			  			<p>시작 수치: <%= hadto.getStartNum() %><%= hadto.getGoalUnit() %>, 
 			  			목표 수치: <%= hadto.getGoalNum() %><%= hadto.getGoalUnit() %></p>
+			  			</div>
 			  			<%} %>
 		  			<%} %>
 		  			<%for (MidDTO middto : midLists) {%>
 		  				<%if (gdto.getGoalId().equals(middto.getGoalId())) {%>
-		  				<p>중간 목표: <%= middto.getMiddleGoal() %></p>
+		  				<div class="card card-body mx-2 my-2">
+		  				<p class="font-bol">중간 목표: <%= middto.getMiddleGoal() %></p>
 		  				<p>시작 수치: <%= middto.getStartNum() %><%= middto.getGoalUnit() %>, 
 			  			목표 수치: <%= middto.getGoalNum() %><%= middto.getGoalUnit() %></p>
 		  				<p>중간목표 달성 날짜: <%= middto.getMidDate() %></p>
+		  				</div>
 		  				<%} %>
 		  			<%} %>
 		  			<%for (MidDownDTO middDto : midDownLists) {%>
 		  				<%if (gdto.getGoalId().equals(middDto.getGoalId())) {%>
-		  				<p>중간 목표: <%= middDto.getMiddleGoal() %></p>
-		  				<p>하위 목표: <%= middDto.getDownGoal() %></p>
+		  				<div class="card card-body mx-2 my-2">
+		  				<p class="font-bol">중간 목표: <%= middDto.getMiddleGoal() %></p>
+		  				<p class="font-bol">하위 목표: <%= middDto.getDownGoal() %></p>
 		  				<p>시작 수치: <%= middDto.getStartNum() %><%= middDto.getGoalUnit() %>, 
 			  			목표 수치: <%= middDto.getGoalNum() %><%= middDto.getGoalUnit() %></p>
 		  				<p>중간목표 달성 날짜: <%= middDto.getMidDate() %></p>
+		  				</div>
 		  				<%} %>
 		  			<%} %>
 		  		</div>

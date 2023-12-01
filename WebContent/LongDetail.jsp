@@ -49,11 +49,12 @@ MidDTO hdto = hdao.selectView(middleId);
     <!-- main content가 삽입될 위치 -->
   	<div id = "content" style="padding:30px; ">
   	
+  	<div class="mx-auto plan-enroll">
   	<form action="LongDetailPro.jsp">
 		      			<input type="hidden" name="goalId" value="<%= gdto.getGoalId() %>" />
 								<div class="mb-5">
 						
-								<div class="card card-body" style="width: 350px;">
+								<div class="card card-body">
 							    	<p class="font-bol font-no">중간 목표와 하위 목표를 입력해주세요</p>
 							    	
 							    	<div class="mb-2 row">
@@ -107,10 +108,10 @@ MidDTO hdto = hdao.selectView(middleId);
 						</div>
 
 			
-						</form>
+	</form>
 						
-						<br/>
-		  	
+	<br/>
+	</div>	  	
 					
 		 
 

@@ -82,7 +82,7 @@ MidDownDTO hdto = hdao.selectView(midDownId);
 							
 							<div class="form-check mb-2">
 								<input class="form-check-input" type="radio" name="repeat33" id="erDay33"
-								value="매일" required>
+								value="매일">
 				  				<label class="form-check-label">
 				    	       		매일
 				  		    	</label>		  		    	
@@ -118,7 +118,7 @@ MidDownDTO hdto = hdao.selectView(midDownId);
 							<label class="col-form-label font-bol">반복 형태를 선택해주세요</label>					
 					        <div class="form-check mb-2">
 					          <input class="form-check-input" type="radio" name="repeatType33" id="count33"
-					          onclick="showDiv(this);" value="횟수" required>
+					          onclick="showDiv(this);" value="횟수">
 					            <label class="form-check-label">
 					                   횟수
 					              </label>
@@ -234,15 +234,15 @@ MidDownDTO hdto = hdao.selectView(midDownId);
 			        		<button type="button" class="btn btn-primary col-auto" 
 			        		 onclick="location.href='LongDetail.jsp?goalId=<%= gdto.getGoalId() %>'"
 			        		 style="background-color:#ffffff; color: #DB6551; border-color: #DB6551;">
-			        		 	+중간 목표와 하위 목표 추가(선택)
+			        		 	중간 목표와 하위 목표 관리
 			        		</button>
 
 			        	<%for (MidDownDTO hadto : habitLists){%>
 			  			<% if (gdto.getGoalId().equals(hadto.getGoalId())) {%>
-			  		<div class="card my-3">
-			  			<p><%= hadto.getMidDownId() %></p>
-			  			<p>중간목표: <%= hadto.getMiddleGoal() %></p>
-			  			<p>하위목표: <%= hadto.getDownGoal() %>
+			  		<div class="card card-body my-3">
+			  			<%-- <p><%= hadto.getMidDownId() %></p> --%>
+			  			<p class="font-bol">중간목표: <%= hadto.getMiddleGoal() %></p>
+			  			<p class="font-bol">하위목표: <%= hadto.getDownGoal() %>
 			  			<p>시작 수치: <%= hadto.getStartNum() %><%= hadto.getGoalUnit() %>,  
 			  			목표 수치: <%= hadto.getGoalNum() %><%= hadto.getGoalUnit() %></p>
 			  			<p>중간목표 달성일: <%= hadto.getMidDate() %></p>

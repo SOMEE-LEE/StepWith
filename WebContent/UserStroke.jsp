@@ -297,7 +297,7 @@ List<StrokeDTO> strokeListsUserId= sdao.getStrokeDTO(usermakeId);
 			 				<div class="mx-auto d-flex" style="width:1000px;">
 								<div class="card mx-2 my-2" style="background-color: <%= sdto.getStrokeColor() %>">
 							  		<div class="card-body" style="width:485px;">
-							   			<p class="card-title" style="font-size: 16px;"><%= sdto.getStrokeMent() %></p>
+							   			<p class="card-title font-bol" style="font-size: 16px;"><%= sdto.getStrokeMent() %></p>
 							    		<p class="card-text" style="font-size:14px;"><%= sdto.getStrokeMyself() %></p>
 							    		<div class="d-flex">
 							    			<p class="card-text" style="font-size:14px; color:#707070;">
@@ -313,7 +313,7 @@ List<StrokeDTO> strokeListsUserId= sdao.getStrokeDTO(usermakeId);
 								 <%-- <%= virtualNum %>  <!--게시물 번호-->  --%>
 								<div class="card mx-2 my-2" style="background-color: <%= sdto.getStrokeColor() %>">
 							  		<div class="card-body" style="width:485px;">
-							   			<p class="card-title" style="font-size: 16px;"><%= sdto.getStrokeMent() %></p>
+							   			<p class="card-title font-bol" style="font-size: 16px;"><%= sdto.getStrokeMent() %></p>
 							    		<p class="card-text" style="font-size:14px;"><%= sdto.getStrokeMyself() %></p>
 							    		<div class="d-flex">
 							    			<p class="card-text" style="font-size:14px; color:#707070;">

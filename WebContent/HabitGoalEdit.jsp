@@ -227,15 +227,15 @@ HabitDTO hdto = hdao.selectView(habitId);
 			        		<button type="button" class="btn btn-primary col-auto" 
 			        		onclick="location.href='HabitDetail.jsp?goalId=<%= gdto.getGoalId() %>'" 
 			        		 style="background-color:#ffffff; color: #DB6551; border-color: #DB6551;">
-			        		 	세부 계획 관리(선택)
+			        		 	세부 계획 관리
 			        		</button>
 			        		
 			        		
 			        <%for (HabitDTO hadto : habitLists){%>
 			  			<% if (gdto.getGoalId().equals(hadto.getGoalId())) {%>
-			  		<div class="card my-3">
-			  			<p><%= hadto.getHabitId() %></p>
-			  			<p>할 일: <%= hadto.getTodo() %></p>
+			  		<div class="card card-body my-3">
+			  			<%-- <p><%= hadto.getHabitId() %></p> --%>
+			  			<p class="font-bol">할 일: <%= hadto.getTodo() %></p>
 			  			<p><%-- 시작 수치: <%= hadto.getStartNum() %><%= hadto.getGoalUnit() %>,  --%>
 			  			목표 수치: <%= hadto.getGoalNum() %><%= hadto.getGoalUnit() %></p>
 			  		</div>
